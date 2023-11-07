@@ -21,23 +21,57 @@ let winScoreRequired = document.getElementById("winScoreRequired");
 let CRR = document.getElementById("CRR");
 let RRR = document.getElementById("RRR");
 let currentOver = document.getElementById("currentOver");
+let remainingScore = parseInt(wicketTeamA.textContent);
 
-
+winScoreRequired.textContent = scoreTeamB.textContent;
 
 function sfAdd(numberOfRun){
     numberOfRun += parseInt(scoreTeamA.textContent); 
     scoreTeamA.textContent = numberOfRun;
+    updateScoreCheck();
+    updateOver();
+    updateCRR();
+    updateRRR();
 }
 
 function sfOut(){
-    wicketTeamA.textContent += 1;
+    wicketTeamA.textContent = parseInt(wicketTeamA.textContent) + 1;
 }
 
 function nzAdd(numberOfRun){
     numberOfRun += parseInt(scoreTeamB.textContent);
     scoreTeamB.textContent = numberOfRun;
+    updateScoreCheck();
 }
 
 function nzOut(){
-    wicketTeamA.textContent = parseInt(wicketTeamA.textContent) += 1;
+    wicketTeamB.textContent = parseInt(wicketTeamB.textContent) + 1;
+}
+
+function updateScoreCheck(){
+   remainingScore = parseInt(scoreTeamB.textContent) - parseInt(scoreTeamA.textContent) + 1;
+   winScoreRequired.textContent = remainingScore; 
+}
+
+function updateOver(){
+    OverRemaining.textContent = (parseFloat(OverRemaining.textContent) - 0.1).toFixed(1);    
+}
+
+function updateCRR(){
+    let localCRR = parseInt(scoreTeamA.textContent) / (5 - parseInt(OverRemaining.textContent));
+    CRR.textContent = localCRR.toFixed(2);
+}
+
+function updateRRR(){
+    // 7.1 = 35/4.9;
+    //           =  20              / 4
+    //           = remaining score / remaining overs 
+    console.log("WSR = " + winScoreRequired.textContent);
+    console.log("OR = " + OverRemaining.textContent);
+
+    let localRRR = parseInt(winScoreRequired.textContent) / parseFloat(OverRemaining.textContent);
+    console.log(localRRR)
+    RRR.textContent = localRRR.toFixed(2);
+
+
 }
