@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="resources/css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cricket Match Score Card</title>
+    </head>
+    <body>
+
+        <div class="container-main-score">
+            <h2>Criket Score Card</h2>
+                <div class="team-block">
+                    <div class="team-side">
+                        <div>    
+                            <img src="resources/img/flag-1.jpg" alt="flag img">
+                            <p>South Africa</p>
+                        </div>
+                        <div>
+                            <span id="scoreTeamA">0</span>/<span id="wicketTeamA">0</span>
+                        </div>
+                    </div>
+                    <div class="team-side">
+                        <div>
+                            <img src="resources/img/flag-2.jpg" alt="flag img">
+                            <p>New Zealand</p>
+                        </div>
+                        <div>
+                            <span id="scoreTeamB">50</span>/<span id="wicketTeamB">10</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="score-info-sec">South Africa need <span id="winScoreRequired">00</span> runs to win <span id="OverRemaining">22.3</span> overs to win - CRR <span id="CRR">0.00</span> RRR: <span id="RRR">0.00</span></div>
+                <div class="overLeft">ODI <span id="currentOver">00</span> of <span>10</span></div>
+            </div>
+        </div>
+
+        <div class="container-main-ref">
+            <div>
+                <h3>Score Card for South Africa</h3>
+                <button onclick="sfAdd(1)" id="sf-add-1" class="btn">Add 1</button>
+                <button onclick="sfAdd(2)" id="sf-add-2" class="btn">Add 2</button>
+                <button onclick="sfAdd(3)" id="sf-add-3" class="btn">Add 3</button>
+                <button onclick="sfAdd(4)" id="sf-add-4" class="btn">Add 4</button>
+                <button onclick="sfAdd(6)" id="sf-add-6" class="btn">Add 6</button>
+                <button onclick="sfOut()" id="sf-out" class="btn">Out</button>
+            </div>
+            <div>
+                <h3>Score Card for New Zealand</h3>
+                <button onclick="nzAdd(1)" id="nz-add-1" class="btn">Add 1</button>
+                <button onclick="nzAdd(2)" id="nz-add-2" class="btn">Add 2</button>
+                <button onclick="nzAdd(3)" id="nz-add-3" class="btn">Add 3</button>
+                <button onclick="nzAdd(4)" id="nz-add-4" class="btn">Add 4</button>
+                <button onclick="nzAdd(6)" id="nz-add-6" class="btn">Add 6</button>
+                <button onclick="nzOut()" id="nz-out" class="btn">Out</button>
+            </div>
+        </div>
+
+        
+        
+    <script src="resources/js/script.js"></script>
+    </body>
+</html>
