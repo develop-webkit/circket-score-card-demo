@@ -25,6 +25,11 @@ let remainingScore = parseInt(wicketTeamA.textContent);
 
 winScoreRequired.textContent = scoreTeamB.textContent;
 
+updateScoreCheck();
+updateOver();
+updateCRR();
+updateRRR();
+
 function sfAdd(numberOfRun){
     numberOfRun += parseInt(scoreTeamA.textContent); 
     scoreTeamA.textContent = numberOfRun;
@@ -42,6 +47,9 @@ function nzAdd(numberOfRun){
     numberOfRun += parseInt(scoreTeamB.textContent);
     scoreTeamB.textContent = numberOfRun;
     updateScoreCheck();
+    updateOver();
+    updateCRR();
+    updateRRR();
 }
 
 function nzOut(){
