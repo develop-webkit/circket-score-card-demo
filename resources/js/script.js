@@ -27,7 +27,6 @@ winScoreRequired.textContent = scoreTeamB.textContent;
 
 updateScoreCheck();
 updateOver();
-updateCRR();
 updateRRR();
 
 function sfAdd(numberOfRun){
